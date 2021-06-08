@@ -1,45 +1,37 @@
-# @zazuko/build-your-vocabularies
+# @zazuko/vocabulary-extras
 
-Roll your own vocabularies package which will export your ontologies/vocabularies as n-quads and code modules.
+Additional vocabularies, commonly used in Zazuko projects:
 
-## Preparation
-
-Having created a repository from this template, follow the instructions below to create a package with your vocabularies.
-
-1. Adjust `package.json`, at the least by:
-   * changing the name
-   * changing the `bin` name
-   * changing the `indexBase` in `fetch` script
-   * possibly remove `private: true`
-2. Prepare your vocabularies:
-   * add their prefix/namespace pairs in [src/prefixes.ts](src/prefixes.ts)
-   * if necessary, set up their fetch routine in [`build/overrides.ts`](build/overrides.ts)
-   * see [here](https://github.com/zazuko/rdf-vocabularies/blob/master/overrides.ts) for examples of various overrides
-   * local vocabularies can be created in [src/vocabulary](src/vocabulary) as RDF sources
-3. `npm run fetch`
-   * optionally call as `npm run fetch -- <prefix>` to fetch+process only one
-4. Customise this readme
-4. Commit the result
-5. Bump version and publish your package
-   * Might consider setting CI automation
+```json
+{
+  "code": "https://code.described.at/",
+  "cube": "https://cube.link/",
+  "pipeline": "https://pipeline.described.at/"
+}
+```
 
 ## Usage
 
-The final product will be an extension to the `@zazuko/rdf-vocabularies`, albeit with side effects. Simply import in your project the to have you prefixes added to the default selection.
+After installing, simply import anywhere to have additional prefixes added to `@zazuko/rdf-vocabularies`
 
 ```javascript
-// replace with your package name
-import '@zazuko/build-your-vocabularies'
+import '@zazuko/vocabulary-extras'
+import { prefixes, expand } from '@zazuko/rdf-vocabularies'
+
+const cubeUri = prefixes.cube
+
+// expand and shrink will also work for those vocabs
+const Cube = expand('cube:Cube')
+
+Cube === 'https://cube.link/Cube'
 ```
 
-Additionally, modules exporting `@rdfjs/namespace` builders will be generated.
+Additionally, modules exporting `@rdfjs/namespace` builders are generated.
 
 ```javascript
-// default builders
-import { prefixA } from '@zazuko/build-your-vocabularies/builders'
+import { cube } from '@zazuko/vocabulary-extras/builders(/strict)'
 
-// strict builders prevent constructing terms which are not defined in vocabulary
-import { prefixB } from '@zazuko/build-your-vocabularies/builders/strict'
+const { Cube } = cube
+
+Cube.value === 'https://cube.link/Cube'
 ```
-
-Check [`@zazuko/rdf-vocabularies` readme](https://github.com/zazuko/rdf-vocabularies#usage) for detailed usage instructions.
