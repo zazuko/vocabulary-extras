@@ -1,13 +1,12 @@
 {
-  "name": "@zazuko/build-your-vocabularies",
+  "name": "@zazuko/vocabulary-extras",
   "version": "0.0.0",
-  "private": true,
-  "description": "Access your vocabularies as datasets or n-quads",
+  "description": "Additional vocabularies, commonly used in Zazuko project",
   "main": "index.js",
   "module": "index.mjs",
   "browser": "index.mjs",
   "bin": {
-    "my-vocab": "bin/vocab.js"
+    "zazuko-vocab": "bin/vocab.js"
   },
   "exports": {
     ".": {
@@ -52,7 +51,7 @@
   ],
   "scripts": {
     "prefetch": "mkdirp ontologies",
-    "fetch": "ts-node build/fetch.ts --indexBase https://prefix.example.com/",
+    "fetch": "ts-node build/fetch.ts --indexBase https://prefix.zazuko.com/",
     "lint": "eslint . --ext .js,.ts --ignore-path .gitignore --quiet",
     "pretest": "npm run lint",
     "prepare:modules": "mkdirp src/datasets; ts-node build/modules",

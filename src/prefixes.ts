@@ -1,4 +1,5 @@
 export default {
-  // Replace with your prefixes here
-  ex: 'https://example.com/vocab#'
+  code: 'https://code.described.at/',
+  cube: 'https://cube.link/',
+  pipeline: 'https://pipeline.described.at/'
 }

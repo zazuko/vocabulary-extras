@@ -12,7 +12,12 @@ export interface Override extends FileSpec {
 }
 
 export const overrides: Record<string, Override> = {
-  ex: {
-    file: 'file:src/vocabulary/ex.ttl'
+  code: {
+    file: 'https://raw.githubusercontent.com/zazuko/code.described.at/master/vocab.nt',
+    mediaType: 'application/n-triples'
+  },
+  pipeline: {
+    file: 'https://raw.githubusercontent.com/zazuko/pipeline.described.at/master/vocab.nt',
+    mediaType: 'application/n-triples'
   }
 }

@@ -1,0 +1,24 @@
+<https://pipeline.described.at/Pipeline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> <https://pipeline.described.at/> .
+<https://pipeline.described.at/Pipeline> <http://www.w3.org/2000/01/rdf-schema#comment> "Definition of a Pipeline" <https://pipeline.described.at/> .
+<https://pipeline.described.at/Pipeline> <http://www.w3.org/2000/01/rdf-schema#label> "Pipeline" <https://pipeline.described.at/> .
+<https://pipeline.described.at/Readable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> <https://pipeline.described.at/> .
+<https://pipeline.described.at/Readable> <http://www.w3.org/2000/01/rdf-schema#comment> "Readable Stream" <https://pipeline.described.at/> .
+<https://pipeline.described.at/Readable> <http://www.w3.org/2000/01/rdf-schema#label> "Readable" <https://pipeline.described.at/> .
+<https://pipeline.described.at/ReadableObjectMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> <https://pipeline.described.at/> .
+<https://pipeline.described.at/ReadableObjectMode> <http://www.w3.org/2000/01/rdf-schema#comment> "Readable Stream in Object Mode" <https://pipeline.described.at/> .
+<https://pipeline.described.at/ReadableObjectMode> <http://www.w3.org/2000/01/rdf-schema#label> "Readable in Object Mode" <https://pipeline.described.at/> .
+<https://pipeline.described.at/Step> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> <https://pipeline.described.at/> .
+<https://pipeline.described.at/Step> <http://www.w3.org/2000/01/rdf-schema#comment> "Definition of a Pipeline Step" <https://pipeline.described.at/> .
+<https://pipeline.described.at/Step> <http://www.w3.org/2000/01/rdf-schema#label> "Step" <https://pipeline.described.at/> .
+<https://pipeline.described.at/Writable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> <https://pipeline.described.at/> .
+<https://pipeline.described.at/Writable> <http://www.w3.org/2000/01/rdf-schema#comment> "Writable Stream" <https://pipeline.described.at/> .
+<https://pipeline.described.at/Writable> <http://www.w3.org/2000/01/rdf-schema#label> "Writable" <https://pipeline.described.at/> .
+<https://pipeline.described.at/WritableObjectMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> <https://pipeline.described.at/> .
+<https://pipeline.described.at/WritableObjectMode> <http://www.w3.org/2000/01/rdf-schema#comment> "Writable Stream in Object Mode" <https://pipeline.described.at/> .
+<https://pipeline.described.at/WritableObjectMode> <http://www.w3.org/2000/01/rdf-schema#label> "Writable in Object Mode" <https://pipeline.described.at/> .
+<https://pipeline.described.at/stepList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> <https://pipeline.described.at/> .
+<https://pipeline.described.at/stepList> <http://www.w3.org/2000/01/rdf-schema#comment> "Ordered List of Pipeline Steps" <https://pipeline.described.at/> .
+<https://pipeline.described.at/stepList> <http://www.w3.org/2000/01/rdf-schema#label> "List of Steps" <https://pipeline.described.at/> .
+<https://pipeline.described.at/steps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> <https://pipeline.described.at/> .
+<https://pipeline.described.at/steps> <http://www.w3.org/2000/01/rdf-schema#comment> "Definition of Steps for a Pipeline" <https://pipeline.described.at/> .
+<https://pipeline.described.at/steps> <http://www.w3.org/2000/01/rdf-schema#label> "Steps" <https://pipeline.described.at/> .
