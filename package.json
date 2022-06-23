@@ -29,9 +29,9 @@
       "require": "./builders/index.js",
       "import": "./builders/index.mjs"
     },
-    "./builders/strict": {
-      "require": "./builders/strict.js",
-      "import": "./builders/strict.mjs"
+    "./builders/loose": {
+      "require": "./builders/loose.js",
+      "import": "./builders/loose.mjs"
     },
     "./datasets/*": {
       "require": "./datasets/*.js",
@@ -76,7 +76,7 @@
     "@rdfjs/fetch-lite": "^2.1.0",
     "@rdfjs/formats-common": "^2.1.0",
     "@rdfjs/serializer-rdfjs": "^0.0.4",
-    "@tpluscode/rdf-ns-builders": "^0.4.5",
+    "@tpluscode/rdf-ns-builders": "^2.0.0",
     "@types/chai": "^4.2.14",
     "@types/node-fetch": "^2.5.10",
     "@types/rdf-dataset-indexed": "^0.4.6",

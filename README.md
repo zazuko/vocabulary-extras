@@ -6,6 +6,7 @@ Additional vocabularies, commonly used in Zazuko projects:
 {
   "code": "https://code.described.at/",
   "cube": "https://cube.link/",
+  "meta": "https://cube.link/meta/",
   "pipeline": "https://pipeline.described.at/"
 }
 ```
@@ -29,7 +30,7 @@ Cube === 'https://cube.link/Cube'
 Additionally, modules exporting `@rdfjs/namespace` builders are generated.
 
 ```javascript
-import { cube } from '@zazuko/vocabulary-extras/builders(/strict)'
+import { cube } from '@zazuko/vocabulary-extras/builders(/loose)'
 
 const { Cube } = cube
 
