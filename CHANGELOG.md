@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras
 
+## 1.0.1
+
+### Patch Changes
+
+- 9fa26c2: Builder's JS and declrations missing in package
+
 ## 1.0.0
 
 ### Major Changes
