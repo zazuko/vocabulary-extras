@@ -19,6 +19,8 @@
   },
   "files": [
     "src/index.ts",
+    "src/builders/index.ts",
+    "src/builders/loose.ts",
     "src/datasets/index.ts"
   ]
 }
