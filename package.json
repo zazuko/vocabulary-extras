@@ -17,6 +17,10 @@
       "require": "./vocabularies.js",
       "import": "./vocabularies.mjs"
     },
+    "./register": {
+      "require": "./register.js",
+      "import": "./register.mjs"
+    },
     "./prefixes": {
       "require": "./prefixes.js",
       "import": "./prefixes.mjs"
@@ -76,7 +80,7 @@
     "@rdfjs/fetch-lite": "^2.1.0",
     "@rdfjs/formats-common": "^2.1.0",
     "@rdfjs/serializer-rdfjs": "^0.0.4",
-    "@tpluscode/rdf-ns-builders": "^2.0.0",
+    "@tpluscode/rdf-ns-builders": "^2.0.1",
     "@types/chai": "^4.2.14",
     "@types/node-fetch": "^2.5.10",
     "@types/rdf-dataset-indexed": "^0.4.6",

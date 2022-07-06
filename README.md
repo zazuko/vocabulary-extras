@@ -14,10 +14,10 @@ Additional vocabularies, commonly used in Zazuko projects:
 
 ## Usage
 
-After installing, simply import anywhere to have additional prefixes added to `@zazuko/rdf-vocabularies`
+After installing, simply import `/register` module anywhere to have additional prefixes added to `@zazuko/rdf-vocabularies`
 
 ```javascript
-import '@zazuko/vocabulary-extras'
+import '@zazuko/vocabulary-extras/register'
 import { prefixes, expand } from '@zazuko/rdf-vocabularies'
 
 const cubeUri = prefixes.cube
