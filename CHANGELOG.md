@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras
 
+## 1.2.3
+
+### Patch Changes
+
+- bea9364: Correct the augmented prefixes module
+
 ## 1.2.2
 
 ### Patch Changes
