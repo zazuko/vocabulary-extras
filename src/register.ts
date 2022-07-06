@@ -1,4 +1,4 @@
-import { prefixes } from '@zazuko/rdf-vocabularies'
+import prefixes from '@zazuko/rdf-vocabularies/prefixes'
 import morePrefixes from './prefixes'
 
 Object.entries(morePrefixes)
