@@ -6,7 +6,7 @@ Object.entries(morePrefixes)
     prefixes[prefix] = namespace
   })
 
-type LocalPrefixes = typeof prefixes
+type LocalPrefixes = typeof morePrefixes
 
 declare module '@zazuko/rdf-vocabularies/prefixes' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
