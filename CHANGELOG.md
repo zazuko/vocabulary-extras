@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras
 
+## 1.1.0
+
+### Minor Changes
+
+- 64bf90f: Added `relation` prefix
+
 ## 1.0.1
 
 ### Patch Changes
