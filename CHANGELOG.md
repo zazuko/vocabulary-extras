@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras
 
+## 1.2.2
+
+### Patch Changes
+
+- f1aef40: Futher improve the register module to make it work with webpack
+
 ## 1.2.1
 
 ### Patch Changes
