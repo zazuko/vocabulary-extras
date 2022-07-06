@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras
 
+## 1.2.0
+
+### Minor Changes
+
+- 8309fca: Separate module to "register" prefixes with `@zazuko/rdf-vocabularies` which prevents webpack bundling issues
+
 ## 1.1.0
 
 ### Minor Changes
