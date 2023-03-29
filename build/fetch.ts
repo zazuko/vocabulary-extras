@@ -1,29 +1,28 @@
 import fs from 'fs'
+import { NamedNode } from 'rdf-js'
 import Program from 'commander'
 import rdf from 'rdf-ext'
 import formats from '@rdfjs/formats-common'
 import rdfFetch, { FactoryInit, DatasetResponse } from '@rdfjs/fetch-lite'
 import { RdfXmlParser } from 'rdfxml-streaming-parser'
-import { expand } from '@zazuko/rdf-vocabularies'
-import { loadFile } from '../src'
-import prefixes from '../src/prefixes'
-import { NamedNode } from 'rdf-js'
+import { expand } from '@zazuko/prefixes'
 import DatasetExt from 'rdf-ext/lib/Dataset'
-import { DatasetIndexed } from 'rdf-dataset-indexed/dataset'
 import fileFetch from 'file-fetch'
 import httpFetch from 'node-fetch'
 import protoFetch from 'proto-fetch'
-import { overrides, Override } from './overrides'
+import prefixes from '../src/prefixes.js'
+import { loadFile } from '../src/index.js'
+import { overrides, Override } from './overrides.js'
 
 interface Prefix {
-  prefix: string;
-  uri: string;
+  prefix: string
+  uri: string
 }
 
 const rawFetch = protoFetch({
   file: fileFetch,
   http: httpFetch,
-  https: httpFetch
+  https: httpFetch,
 })
 
 // this script gets your IP banned from w3.org unless you wait long enough between w3.org requests
@@ -33,11 +32,11 @@ let lastW3FetchAt = 0
 // other workarounds to avoid w3.org banning us for making 30 requests over 10 minutes every two months...
 const randomInt = (a: number, b: number) => Math.floor(a + Math.random() * (b + 1 - a))
 const fetchOptions = ({ headers, ...rest }: FactoryInit<DatasetExt>): FactoryInit<DatasetExt> => ({
-  'credentials': 'omit',
-  'headers': {
+  credentials: 'omit',
+  headers: {
     'accept-language': 'en-US,en',
     'cache-control': 'no-cache',
-    'pragma': 'no-cache',
+    pragma: 'no-cache',
     'sec-fetch-mode': 'navigate',
     'sec-fetch-site': 'cross-site',
     'sec-fetch-user': '?1',
@@ -46,22 +45,22 @@ const fetchOptions = ({ headers, ...rest }: FactoryInit<DatasetExt>): FactoryIni
       `10_${randomInt(0, 15)}_${randomInt(1, 5)}) ` +
       `AppleWebKit/${randomInt(400, 537)}.${randomInt(1, 40)} (KHTML, like Gecko) ` +
       `Chrome/${randomInt(11, 77)}.0.${randomInt(1, 6000)}.120 Safari/${randomInt(400, 537)}.${randomInt(1, 40)}`,
-    ...headers
+    ...headers,
   },
-  'referrerPolicy': 'no-referrer-when-downgrade',
-  'body': null,
-  'method': 'GET',
-  'mode': 'cors',
-  ...rest
+  referrerPolicy: 'no-referrer-when-downgrade',
+  body: null,
+  method: 'GET',
+  mode: 'cors',
+  ...rest,
 })
 
 const expandToNamedNode = (str: string): NamedNode => rdf.namedNode(expand(str))
 
-async function wait (milliseconds: number) {
+async function wait(milliseconds: number) {
   return new Promise((resolve) => setTimeout(resolve, milliseconds))
 }
 
-function fetchWrapper (url: string, options: FactoryInit<DatasetExt>, timeout: number) {
+function fetchWrapper(url: string, options: FactoryInit<DatasetExt>, timeout: number) {
   // source: https://stackoverflow.com/a/46946588/4359369
   return new Promise((resolve, reject) => {
     rdfFetch <DatasetExt>(url, { ...fetchOptions(options), fetch: rawFetch }).then(resolve, reject)
@@ -73,7 +72,7 @@ function fetchWrapper (url: string, options: FactoryInit<DatasetExt>, timeout: n
   }) as Promise<DatasetResponse<DatasetExt>>
 }
 
-async function fetch (mappings: any, indexOnly = false) {
+async function fetch(mappings: any, indexOnly = false) {
   const prefix = mappings.prefix
   mappings = mappings.files || [mappings]
 
@@ -82,7 +81,7 @@ async function fetch (mappings: any, indexOnly = false) {
   for (const mapping of (indexOnly ? [] : mappings)) {
     const headers: HeadersInit = {}
     if (mapping.mediaType) {
-      headers['accept'] = mapping.mediaType
+      headers.accept = mapping.mediaType
     }
     const uri = mapping.file || mapping.uri
     const xmlParserOptions = { allowDuplicateRdfIds: true }
@@ -110,8 +109,7 @@ async function fetch (mappings: any, indexOnly = false) {
       }
       const fetchedDataset = await res.dataset()
       dataset = dataset.merge(fetchedDataset)
-    }
-    catch (err) {
+    } catch (err) {
       console.warn(`${prefix}: failed fetching/processing: ${err.message}`)
     }
   }
@@ -122,25 +120,26 @@ async function fetch (mappings: any, indexOnly = false) {
   return dataset
 }
 
-function firstVal (dataset: DatasetIndexed) {
+function firstVal(dataset: DatasetExt) {
   if (dataset.size) {
-    const english = dataset.toArray().find(({ object }: any) => object.language === 'en')
+    const quads = [...dataset]
+    const english = quads.find(({ object }: any) => object.language === 'en')
     if (english) {
       return english.object.value
     }
-    const noLanguage = dataset.toArray().find(({ object }: any) => object.language === '')
+    const noLanguage = quads.find(({ object }: any) => object.language === '')
     if (noLanguage) {
       return noLanguage.object.value
     }
-    return dataset.toArray()[0].object.value
+    return quads[0].object.value
   }
 }
 
-function getTitle (dataset: DatasetIndexed): string {
+function getTitle(dataset: DatasetExt): string {
   const potentialValues = [
     firstVal(dataset.match(null, rdf.namedNode(expand('dc11:title')))),
     firstVal(dataset.match(null, rdf.namedNode(expand('dcterms:title')))),
-    firstVal(dataset.match(null, rdf.namedNode(expand('rdfs:label'))))
+    firstVal(dataset.match(null, rdf.namedNode(expand('rdfs:label')))),
   ].filter(Boolean)
 
   if (potentialValues.length && potentialValues[0]) {
@@ -149,11 +148,11 @@ function getTitle (dataset: DatasetIndexed): string {
   return ''
 }
 
-function getDescription (dataset: DatasetIndexed): string {
+function getDescription(dataset: DatasetExt): string {
   const potentialValues = [
     firstVal(dataset.match(null, rdf.namedNode(expand('dc11:description')))),
     firstVal(dataset.match(null, rdf.namedNode(expand('dcterms:description')))),
-    firstVal(dataset.match(null, rdf.namedNode(expand('rdfs:comment'))))
+    firstVal(dataset.match(null, rdf.namedNode(expand('rdfs:comment')))),
   ].filter(Boolean)
 
   if (potentialValues.length && potentialValues[0]) {
@@ -162,7 +161,7 @@ function getDescription (dataset: DatasetIndexed): string {
   return ''
 }
 
-function generateIndex (subject: NamedNode, mappings: any, dataset: DatasetExt) {
+function generateIndex(subject: NamedNode, mappings: any, dataset: DatasetExt) {
   const vocabUri = rdf.namedNode(mappings.uri)
   let filteredDataset = dataset.match(vocabUri)
   if (vocabUri.value.endsWith('/') || vocabUri.value.endsWith('#')) {
@@ -176,38 +175,38 @@ function generateIndex (subject: NamedNode, mappings: any, dataset: DatasetExt) 
 
   if (title) {
     prefixDataset.add(
-      rdf.quad(subject, expandToNamedNode('dcterms:title'), rdf.literal(title.trim()))
+      rdf.quad(subject, expandToNamedNode('dcterms:title'), rdf.literal(title.trim())),
     )
   }
   if (description) {
     prefixDataset.add(
-      rdf.quad(subject, expandToNamedNode('dcterms:description'), rdf.literal(description.trim()))
+      rdf.quad(subject, expandToNamedNode('dcterms:description'), rdf.literal(description.trim())),
     )
   }
   prefixDataset.add(
-    rdf.quad(subject, expandToNamedNode('rdf:type'), expandToNamedNode('rdfa:PrefixMapping'))
+    rdf.quad(subject, expandToNamedNode('rdf:type'), expandToNamedNode('rdfa:PrefixMapping')),
   )
   prefixDataset.add(
-    rdf.quad(subject, expandToNamedNode('rdfa:prefix'), rdf.literal(mappings.prefix))
+    rdf.quad(subject, expandToNamedNode('rdfa:prefix'), rdf.literal(mappings.prefix)),
   )
   prefixDataset.add(
-    rdf.quad(subject, expandToNamedNode('rdfa:uri'), rdf.namedNode(mappings.uri))
+    rdf.quad(subject, expandToNamedNode('rdfa:uri'), rdf.namedNode(mappings.uri)),
   )
   prefixDataset.add(
-    rdf.quad(subject, expandToNamedNode('dbo:filename'), rdf.literal(`ontologies/${mappings.prefix}.nq`))
+    rdf.quad(subject, expandToNamedNode('dbo:filename'), rdf.literal(`ontologies/${mappings.prefix}.nq`)),
   )
   const files = Array.isArray(mappings.files)
     ? (mappings.files || [mappings]).map(({ file }: any) => file)
     : [mappings.file || mappings.uri]
   files.filter(Boolean).forEach((file: string) => {
     prefixDataset.add(
-      rdf.quad(subject, expandToNamedNode('rdfs:isDefinedBy'), rdf.namedNode(file))
+      rdf.quad(subject, expandToNamedNode('rdfs:isDefinedBy'), rdf.namedNode(file)),
     )
   })
   return prefixDataset
 }
 
-async function main (prefixesToDownload: string[], { indexBase }: { indexBase: string }) {
+async function main(prefixesToDownload: string[], { indexBase }: { indexBase: string }) {
   const indexPath = './ontologies/_index.nq'
   let existingIndex
   if (fs.existsSync(indexPath)) {
@@ -224,7 +223,7 @@ async function main (prefixesToDownload: string[], { indexBase }: { indexBase: s
     const override = overrides[prefix]
     return {
       ...current,
-      [prefix]: { uri, prefix, ...override }
+      [prefix]: { uri, prefix, ...override },
     }
   }, {})
 
@@ -247,7 +246,7 @@ async function main (prefixesToDownload: string[], { indexBase }: { indexBase: s
       console.log(`${mappings.prefix}: wrote ${dataset.size} quads to ${file}`)
 
       const indexSubject = rdf.namedNode(`${indexBase}${mappings.prefix}:`)
-      indexDataset.removeMatches(indexSubject, null, null, null)
+      indexDataset.deleteMatches(indexSubject, null, null, null)
       indexDataset = indexDataset.merge(generateIndex(indexSubject, mappings, dataset))
     }
   }

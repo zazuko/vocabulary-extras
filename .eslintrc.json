@@ -1,0 +1,15 @@
+{
+  "extends": [ "@tpluscode" ],
+  "parserOptions": {
+    "project": "./tsconfig.lint.json"
+  },
+  "overrides": [
+    {
+      "files": ["build/*"],
+      "rules": {
+        "no-console": "off",
+        "import/no-extraneous-dependencies": "warn"
+      }
+    }
+  ]
+}

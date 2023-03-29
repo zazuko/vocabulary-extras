@@ -1,22 +1,22 @@
-import RdfjsSerializer from '@rdfjs/serializer-rdfjs'
 import fs from 'fs'
-import { vocabularies } from '../src'
+import RdfjsSerializer from '@rdfjs/serializer-rdfjs'
 import QuadExt from 'rdf-ext/lib/Quad'
+import { vocabularies } from '../src/index.js'
 
 const rdfjsSerializer = new RdfjsSerializer({ module: 'ts' })
 
-async function serializeRdfjsModule (prefix: string, quads: QuadExt[]) {
+async function serializeRdfjsModule(prefix: string, quads: QuadExt[]) {
   const code = rdfjsSerializer.transform(quads)
   const path = `./src/datasets/${prefix}.ts`
 
   fs.writeFileSync(path, code)
 }
 
-async function main () {
+async function main() {
   const datasets = await vocabularies()
   const codeModules = Object.entries(datasets)
     .map(([prefix, dataset]) => {
-      const quadArray = dataset?.toArray() || []
+      const quadArray = [...dataset]
       for (const quad of quadArray) {
         if (quad.object.termType === 'Literal' &&
           !quad.object.value.includes('\\\\') &&
