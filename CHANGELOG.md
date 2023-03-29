@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras
 
+## 2.0.0
+
+### Major Changes
+
+- 8e39f69: Package is now ESM-only
+
 ## 1.2.3
 
 ### Patch Changes
