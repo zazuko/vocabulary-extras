@@ -10,7 +10,7 @@
     "strict": true,
     "strictNullChecks": true,
     "lib": [
-      "es2015",
+      "ES2020",
       "webworker"
     ],
     "outDir": ".",

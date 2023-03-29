@@ -1,5 +1,5 @@
-import prefixes from '@zazuko/rdf-vocabularies/prefixes'
-import morePrefixes from './prefixes'
+import prefixes from '@zazuko/prefixes'
+import morePrefixes from './prefixes.js'
 
 Object.entries(morePrefixes)
   .forEach(([prefix, namespace]) => {
@@ -8,7 +8,7 @@ Object.entries(morePrefixes)
 
 type LocalPrefixes = typeof morePrefixes
 
-declare module '@zazuko/rdf-vocabularies/prefixes' {
+declare module '@zazuko/prefixes' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface Prefixes extends LocalPrefixes {
   }
