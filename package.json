@@ -8,38 +8,14 @@
     "zazuko-vocab": "bin/vocab.js"
   },
   "exports": {
-    ".": {
-      "require": "./index.js",
-      "import": "./index.mjs"
-    },
-    "./vocabularies": {
-      "require": "./vocabularies.js",
-      "import": "./vocabularies.mjs"
-    },
-    "./register": {
-      "require": "./register.js",
-      "import": "./register.mjs"
-    },
-    "./prefixes": {
-      "require": "./prefixes.js",
-      "import": "./prefixes.mjs"
-    },
-    "./datasets": {
-      "require": "./datasets/index.js",
-      "import": "./datasets/index.mjs"
-    },
-    "./builders": {
-      "require": "./builders/index.js",
-      "import": "./builders/index.mjs"
-    },
-    "./builders/loose": {
-      "require": "./builders/loose.js",
-      "import": "./builders/loose.mjs"
-    },
-    "./datasets/*": {
-      "require": "./datasets/*.js",
-      "import": "./datasets/*.mjs"
-    }
+    ".": "./index.js",
+    "./vocabularies": "./vocabularies.js",
+    "./register": "./register.js",
+    "./prefixes": "./prefixes.js",
+    "./datasets": "./datasets/index.js",
+    "./builders": "./builders/index.js",
+    "./builders/loose": "./builders/loose.js",
+    "./datasets/*": "./datasets/*.js"
   },
   "files": [
     "bin",
