@@ -1,6 +1,6 @@
 {
   "name": "@zazuko/vocabulary-extras",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Additional vocabularies, commonly used in Zazuko projects",
   "main": "index.js",
   "type": "module",
