@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras
 
+## 2.0.1
+
+### Patch Changes
+
+- 56b7144: Wrong exports in package.json
+
 ## 2.0.0
 
 ### Major Changes
