@@ -1,6 +1,6 @@
 {
   "name": "@zazuko/vocabulary-extras-builders",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "strict.js",
   "exports": {

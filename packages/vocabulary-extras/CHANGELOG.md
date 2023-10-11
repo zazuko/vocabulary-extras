@@ -1,5 +1,19 @@
 # @zazuko/vocabulary-extras
 
+## 2.0.2
+
+### Patch Changes
+
+- ebe081d: External package for builders
+- ebe081d: Use `@zazuko/env`
+- Updated dependencies [ebe081d]
+  - @vocabulary/relation@1.0.0
+  - @vocabulary/code@1.0.0
+  - @vocabulary/cube@1.0.0
+  - @vocabulary/meta@1.0.0
+  - @vocabulary/pipeline@1.0.0
+  - @zazuko/vocabulary-extras-builders@1.0.0
+
 ## 2.0.1
 
 ### Patch Changes
