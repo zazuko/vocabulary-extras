@@ -1,0 +1,25 @@
+{
+  "name": "@zazuko/vocabulary-extras-builders",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "strict.js",
+  "exports": {
+    "./loose": "./loose.js"
+  },
+  "scripts": {
+    "prebuild": "npx --node-options='--loader ts-node/esm' rdf-ns-builders generate -p @zazuko/vocabulary-extras -o .",
+    "build": "tsc"
+  },
+  "files": [
+    "**/*.js",
+    "**/*.d.ts",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@rdfjs/namespace": "^2.0.0",
+    "@rdfjs/types": "^1.1.0"
+  },
+  "devDependencies": {
+    "@tpluscode/rdf-ns-builder-generator": "^1.1.1"
+  }
+}

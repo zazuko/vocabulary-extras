@@ -1,0 +1,41 @@
+{
+  "name": "@zazuko/vocabulary-extras",
+  "version": "2.0.1",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./builders": "./builders/index.js",
+    "./builders/loose": "./builders/loose.js",
+    "./register": "./register.js",
+    "./prefixes": "./prefixes.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "bin",
+    "**/*.js",
+    "**/*.d.ts",
+    "**/*.d.ts.map",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "rdf",
+    "rdfjs",
+    "prefix",
+    "namespace",
+    "ontologies",
+    "vocabularies"
+  ],
+  "dependencies": {
+    "@zazuko/vocabulary-loader": "^1.0.1",
+    "@zazuko/vocabulary-extras-builders": "^0.0.0",
+    "@zazuko/prefixes": "^2.0.0",
+    "@vocabulary/code": "^0.0.0",
+    "@vocabulary/cube": "^0.0.0",
+    "@vocabulary/meta": "^0.0.0",
+    "@vocabulary/pipeline": "^0.0.0",
+    "@vocabulary/relation": "^0.0.0"
+  }
+}

@@ -1,42 +1,12 @@
 {
-  "name": "@zazuko/vocabulary-extras",
-  "version": "2.0.1",
+  "name": "zazuko-vocabulary-extras",
+  "private": true,
   "description": "Additional vocabularies, commonly used in Zazuko projects",
   "main": "index.js",
   "type": "module",
-  "bin": {
-    "zazuko-vocab": "bin/vocab.js"
-  },
-  "exports": {
-    ".": "./index.js",
-    "./vocabularies": "./vocabularies.js",
-    "./register": "./register.js",
-    "./prefixes": "./prefixes.js",
-    "./datasets": "./datasets/index.js",
-    "./builders": "./builders/index.js",
-    "./builders/loose": "./builders/loose.js",
-    "./datasets/*": "./datasets/*.js"
-  },
-  "files": [
-    "bin",
-    "builders",
-    "loadDataset",
-    "datasets",
-    "ontologies",
-    "*.js",
-    "*.d.ts",
-    "*.d.ts.map"
-  ],
   "scripts": {
-    "prefetch": "mkdirp ontologies",
-    "fetch": "ts-node build/fetch.ts --indexBase https://prefix.zazuko.com/",
+    "postinstall": "husky install",
     "lint": "eslint . --ext .js,.ts --ignore-path .gitignore --quiet",
-    "pretest": "npm run lint",
-    "prepare:modules": "mkdirp src/datasets; node --loader ts-node/esm build/modules.ts",
-    "prepare:builders": "node --loader ts-node/esm node_modules/.bin/rdf-ns-builders generate -p ./src/index.ts -o src/builders",
-    "prebuild": "run-p prepare:*",
-    "build": "tsc",
-    "prepack": "npm run build",
     "release": "changeset publish"
   },
   "author": "Zazuko GmbH",
@@ -46,59 +16,22 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.23.0",
-    "@rdfjs/fetch-lite": "^3.2.1",
-    "@rdfjs/formats-common": "^3.1.0",
-    "@rdfjs/serializer-rdfjs": "^0.1.1",
-    "@tpluscode/eslint-config": "0.4.3",
-    "@tpluscode/rdf-ns-builders": "^3.0.2",
-    "@types/chai": "^4.2.14",
-    "@types/node-fetch": "^2.5.10",
-    "@types/rdf-ext": "^2.0.2",
-    "@types/rdfjs__fetch-lite": "^3.0.2",
-    "@types/rdfjs__formats-common": "^2.0.2",
-    "@types/rdfjs__parser-n3": "^2.0.1",
-    "@types/rdfjs__serializer-rdfjs": "^0.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
-    "clownface": "^1.2.0",
-    "eslint": ">=6",
-    "eslint-config-standard": ">=11",
-    "eslint-import-resolver-typescript": "^3.5.3",
-    "eslint-plugin-import": ">=2",
-    "eslint-plugin-n": ">=15",
-    "eslint-plugin-node": ">=11",
-    "eslint-plugin-promise": ">=6",
-    "eslint-plugin-require-extensions": ">=0.1.3",
-    "eslint-plugin-standard": "^4.0.0",
-    "file-fetch": "^1.6.1",
-    "nodeify-fetch": "^2.2.1",
-    "npm-run-all": "^4.1.5",
-    "proto-fetch": "^1.0.0",
-    "rdfxml-streaming-parser": "^2.2.1",
-    "rimraf": "^3.0.2",
-    "safe-identifier": "^0.4.2",
-    "standard": ">=11",
-    "ts-morph": "^11.0.0",
+    "@tpluscode/eslint-config": "^0.4.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.2"
+    "typescript": "^5.2.2"
   },
-  "dependencies": {
-    "@rdfjs/namespace": "^2.0.0",
-    "@rdfjs/parser-n3": "^2.0.1",
-    "@zazuko/prefixes": "^1.0.0-rc.0",
-    "commander": "^5.0.0",
-    "pkg-dir": "^5.0.0",
-    "rdf-ext": "^2.2.0",
-    "rdf-js": "*",
-    "readable-stream": "^3.6.0",
-    "string-to-stream": "^3.0.1"
-  },
-  "keywords": [
-    "rdf",
-    "rdfjs",
-    "prefix",
-    "namespace",
-    "ontologies",
-    "vocabularies"
-  ]
+  "workspaces": [
+    "packages/*",
+    "ontologies/*"
+  ],
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix --quiet"
+    ]
+  }
 }
