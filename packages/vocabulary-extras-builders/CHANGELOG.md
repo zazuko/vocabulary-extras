@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras-builders
 
+## 1.0.3
+
+### Patch Changes
+
+- eb1f83c: Missing export of '.' caused ERR_PACKAGE_PATH_NOT_EXPORTED
+
 ## 1.0.2
 
 ### Patch Changes
