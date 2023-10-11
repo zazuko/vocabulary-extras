@@ -1,0 +1,35 @@
+{
+  "name": "@vocabulary/cube",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "fetch": "vocab-build datasets",
+    "prebuild": "vocab-build module",
+    "build": "tsc",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@vocabulary/builder": "^1.0.4"
+  },
+  "license": "MIT",
+  "vocabulary": {
+    "prefix": "cube",
+    "namespace": "https://cube.link/"
+  },
+  "homepage": "https://cube.link/",
+  "repository": {
+    "url": "git://github.com/zazuko/vocabulary-extras.git",
+    "directory": "ontologies/cube"
+  },
+  "bugs": {
+    "url": "https://github.com/zazuko/vocabulary-extras/issues"
+  },
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "*.nq",
+    "*.nt",
+    "CHANGELOG.md"
+  ]
+}

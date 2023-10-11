@@ -1,7 +1,7 @@
 {
   "extends": [ "@tpluscode" ],
   "parserOptions": {
-    "project": "./tsconfig.lint.json"
+    "project": "./tsconfig.json"
   },
   "overrides": [
     {
@@ -9,6 +9,12 @@
       "rules": {
         "no-console": "off",
         "import/no-extraneous-dependencies": "warn"
+      }
+    },
+    {
+      "files": ["packages/vocabulary-extras-builders/vocabularies/*"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
       }
     }
   ]

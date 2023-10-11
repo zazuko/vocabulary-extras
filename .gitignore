@@ -9,3 +9,4 @@ src/datasets/
 !.eslintrc.js
 !bin/
 src/builders/
+ontologies/*/index.ts
