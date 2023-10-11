@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras-builders
 
+## 1.0.2
+
+### Patch Changes
+
+- 6cdf4b9: Package contents still missing 🙄
+
 ## 1.0.1
 
 ### Patch Changes
