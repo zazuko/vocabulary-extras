@@ -15,5 +15,9 @@
     ],
     "declaration": true,
     "declarationMap": true
-  }
+  },
+  "files": [
+    "strict.ts",
+    "loose.ts"
+  ]
 }
