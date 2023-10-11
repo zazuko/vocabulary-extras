@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras
 
+## 2.0.3
+
+### Patch Changes
+
+- fa6cdc4: JS modules gone from package
+
 ## 2.0.2
 
 ### Patch Changes
