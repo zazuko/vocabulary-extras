@@ -11,7 +11,7 @@
     "./prefixes": "./prefixes.js"
   },
   "scripts": {
-    "build": "tsc"
+    "prepack": "tsc"
   },
   "files": [
     "bin",
