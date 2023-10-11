@@ -4,6 +4,7 @@
   "type": "module",
   "main": "strict.js",
   "exports": {
+    ".": "./strict.js",
     "./loose": "./loose.js"
   },
   "scripts": {
