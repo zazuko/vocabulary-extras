@@ -1,5 +1,17 @@
 # @zazuko/vocabulary-extras
 
+## 2.0.4
+
+### Patch Changes
+
+- Updated dependencies [f3f3536]
+- Updated dependencies [f3f3536]
+- Updated dependencies [f3f3536]
+- Updated dependencies [f3f3536]
+  - @zazuko/vocabulary-extras-builders@1.1.0
+  - @vocabulary/b59@0.1.0
+  - @vocabulary/pipeline@1.1.0
+
 ## 2.0.3
 
 ### Patch Changes
