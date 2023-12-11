@@ -1,5 +1,12 @@
 # @zazuko/vocabulary-extras-builders
 
+## 1.1.0
+
+### Minor Changes
+
+- f3f3536: New vocab: barnard59
+- f3f3536: Missing terms from pipeline namespace
+
 ## 1.0.3
 
 ### Patch Changes
