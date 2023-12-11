@@ -32,6 +32,7 @@
     "@zazuko/vocabulary-loader": "^1.0.1",
     "@zazuko/vocabulary-extras-builders": "^1.0.0",
     "@zazuko/prefixes": "^2.0.0",
+    "@vocabulary/b59": "^0.0.0",
     "@vocabulary/code": "^1.0.0",
     "@vocabulary/cube": "^1.0.0",
     "@vocabulary/meta": "^1.0.0",

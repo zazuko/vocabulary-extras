@@ -1,3 +1,4 @@
+export { strict as b59 } from './vocabularies/b59.js'
 export { strict as code } from './vocabularies/code.js'
 export { strict as cube } from './vocabularies/cube.js'
 export { strict as meta } from './vocabularies/meta.js'
