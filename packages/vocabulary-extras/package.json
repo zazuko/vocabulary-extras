@@ -36,7 +36,7 @@
     "@vocabulary/code": "^1.0.0",
     "@vocabulary/cube": "^1.0.0",
     "@vocabulary/meta": "^1.0.0",
-    "@vocabulary/pipeline": "^1.1.0",
+    "@vocabulary/pipeline": "^1.1.1",
     "@vocabulary/relation": "^1.0.0"
   }
 }

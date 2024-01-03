@@ -4,6 +4,8 @@ import { NamedNode } from '@rdfjs/types'
 export interface Pipeline {
   '': NamedNode<'https://pipeline.described.at/'>
   'FileContents': NamedNode<'https://pipeline.described.at/FileContents'>
+  /** An operation is the definition of a reusable step */
+  'Operation': NamedNode<'https://pipeline.described.at/Operation'>
   /** Definition of a Pipeline */
   'Pipeline': NamedNode<'https://pipeline.described.at/Pipeline'>
   /** Readable Stream */
