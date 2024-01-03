@@ -1,5 +1,11 @@
 # @vocabulary/pipeline
 
+## 1.1.1
+
+### Patch Changes
+
+- 74dec9a: Missing term `p:Operation`
+
 ## 1.1.0
 
 ### Minor Changes
