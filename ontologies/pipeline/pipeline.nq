@@ -1,5 +1,8 @@
 <https://pipeline.described.at/FileContents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> <https://pipeline.described.at/> .
 <https://pipeline.described.at/FileContents> <http://www.w3.org/2000/01/rdf-schema#label> "Type of a literal which represents a path to be loaded into a step" <https://pipeline.described.at/> .
+<https://pipeline.described.at/Operation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> <https://pipeline.described.at/> .
+<https://pipeline.described.at/Operation> <http://www.w3.org/2000/01/rdf-schema#comment> "An operation is the definition of a reusable step" <https://pipeline.described.at/> .
+<https://pipeline.described.at/Operation> <http://www.w3.org/2000/01/rdf-schema#label> "Operation" <https://pipeline.described.at/> .
 <https://pipeline.described.at/Pipeline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> <https://pipeline.described.at/> .
 <https://pipeline.described.at/Pipeline> <http://www.w3.org/2000/01/rdf-schema#comment> "Definition of a Pipeline" <https://pipeline.described.at/> .
 <https://pipeline.described.at/Pipeline> <http://www.w3.org/2000/01/rdf-schema#label> "Pipeline" <https://pipeline.described.at/> .
@@ -25,6 +28,7 @@
 <https://pipeline.described.at/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> <https://pipeline.described.at/> .
 <https://pipeline.described.at/name> <http://www.w3.org/2000/01/rdf-schema#label> "Name of a Pipeline Variable" <https://pipeline.described.at/> .
 <https://pipeline.described.at/name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <https://pipeline.described.at/> .
+<https://pipeline.described.at/rdfs:Class> <http://schema.org/hasPart> <https://pipeline.described.at/Operation> <https://pipeline.described.at/> .
 <https://pipeline.described.at/rdfs:Class> <http://schema.org/hasPart> <https://pipeline.described.at/Pipeline> <https://pipeline.described.at/> .
 <https://pipeline.described.at/rdfs:Class> <http://schema.org/hasPart> <https://pipeline.described.at/Readable> <https://pipeline.described.at/> .
 <https://pipeline.described.at/rdfs:Class> <http://schema.org/hasPart> <https://pipeline.described.at/ReadableObjectMode> <https://pipeline.described.at/> .
