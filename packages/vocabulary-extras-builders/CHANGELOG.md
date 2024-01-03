@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras-builders
 
+## 1.1.1
+
+### Patch Changes
+
+- 43f05f0: Updated pipeline vocabulary
+
 ## 1.1.0
 
 ### Minor Changes

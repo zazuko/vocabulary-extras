@@ -1,6 +1,6 @@
 {
   "name": "@zazuko/vocabulary-extras",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -30,7 +30,7 @@
   ],
   "dependencies": {
     "@zazuko/vocabulary-loader": "^1.0.1",
-    "@zazuko/vocabulary-extras-builders": "^1.1.0",
+    "@zazuko/vocabulary-extras-builders": "^1.1.1",
     "@zazuko/prefixes": "^2.0.0",
     "@vocabulary/b59": "^0.1.0",
     "@vocabulary/code": "^1.0.0",

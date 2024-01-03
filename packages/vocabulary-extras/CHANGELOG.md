@@ -1,5 +1,13 @@
 # @zazuko/vocabulary-extras
 
+## 2.0.5
+
+### Patch Changes
+
+- 43f05f0: Updated pipeline vocabulary
+- Updated dependencies [43f05f0]
+  - @zazuko/vocabulary-extras-builders@1.1.1
+
 ## 2.0.4
 
 ### Patch Changes
