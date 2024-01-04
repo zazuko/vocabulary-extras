@@ -1,5 +1,11 @@
 # @vocabulary/pipeline
 
+## 1.1.3
+
+### Patch Changes
+
+- ac24dbd: Removed wrong term `p:pipeline`
+
 ## 1.1.2
 
 ### Patch Changes
