@@ -28,6 +28,8 @@
 <https://pipeline.described.at/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> <https://pipeline.described.at/> .
 <https://pipeline.described.at/name> <http://www.w3.org/2000/01/rdf-schema#label> "Name of a Pipeline Variable" <https://pipeline.described.at/> .
 <https://pipeline.described.at/name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> <https://pipeline.described.at/> .
+<https://pipeline.described.at/pipeline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> <https://pipeline.described.at/> .
+<https://pipeline.described.at/pipeline> <http://www.w3.org/2000/01/rdf-schema#label> "Pipeline" <https://pipeline.described.at/> .
 <https://pipeline.described.at/rdfs:Class> <http://schema.org/hasPart> <https://pipeline.described.at/Operation> <https://pipeline.described.at/> .
 <https://pipeline.described.at/rdfs:Class> <http://schema.org/hasPart> <https://pipeline.described.at/Pipeline> <https://pipeline.described.at/> .
 <https://pipeline.described.at/rdfs:Class> <http://schema.org/hasPart> <https://pipeline.described.at/Readable> <https://pipeline.described.at/> .

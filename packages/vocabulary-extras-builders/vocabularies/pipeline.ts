@@ -21,6 +21,7 @@ export interface Pipeline {
   /** Writable Stream in Object Mode */
   'WritableObjectMode': NamedNode<'https://pipeline.described.at/WritableObjectMode'>
   'name': NamedNode<'https://pipeline.described.at/name'>
+  'pipeline': NamedNode<'https://pipeline.described.at/pipeline'>
   'required': NamedNode<'https://pipeline.described.at/required'>
   'sensitive': NamedNode<'https://pipeline.described.at/sensitive'>
   /** Ordered List of Pipeline Steps */
