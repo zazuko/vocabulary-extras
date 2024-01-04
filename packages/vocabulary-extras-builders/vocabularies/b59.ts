@@ -5,6 +5,7 @@ export interface B59 {
   '': NamedNode<'https://barnard59.zazuko.com/vocab#'>
   'CliCommand': NamedNode<'https://barnard59.zazuko.com/vocab#CliCommand'>
   'command': NamedNode<'https://barnard59.zazuko.com/vocab#command'>
+  'pipeline': NamedNode<'https://barnard59.zazuko.com/vocab#pipeline'>
   /** It must be a literal with a path relative to installation directory (node_modules) */
   'source': NamedNode<'https://barnard59.zazuko.com/vocab#source'>
 }
