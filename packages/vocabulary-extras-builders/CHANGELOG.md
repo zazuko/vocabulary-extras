@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras-builders
 
+## 1.1.2
+
+### Patch Changes
+
+- c2b8d69: Missing property `p:pipeline`
+
 ## 1.1.1
 
 ### Patch Changes
