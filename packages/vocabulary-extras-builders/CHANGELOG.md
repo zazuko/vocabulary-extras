@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras-builders
 
+## 1.1.3
+
+### Patch Changes
+
+- ec63e45: Update builder fo `pipeline` and `barnard59`
+
 ## 1.1.2
 
 ### Patch Changes
