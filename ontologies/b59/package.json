@@ -10,7 +10,7 @@
     "prepack": "npm run build"
   },
   "devDependencies": {
-    "@vocabulary/builder": "^1.0.4"
+    "@vocabulary/builder": "^1.0.5"
   },
   "license": "MIT",
   "vocabulary": {
