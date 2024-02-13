@@ -1,5 +1,11 @@
 # @zazuko/vocabulary-extras
 
+## 2.0.6
+
+### Patch Changes
+
+- 39ec171: Updated `@zazuko/vocabulary-loader` to `v1.0.2`
+
 ## 2.0.5
 
 ### Patch Changes
